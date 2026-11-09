@@ -8,7 +8,7 @@ nb = json.load(open('dengue-detection4.ipynb')); g = {'__name__': '__main__'}
 t0 = time.time()
 for i, c in enumerate(nb['cells']):
     if c['cell_type'] != 'code' or i > 39 or i in (8, 9, 11): continue
-    src = ''.join(c['source']).replace('/kaggle/input/datasets/musabbir22/dengue-detection-dataset4/Dengue Fever Hematological Dataset.csv', 'data/Dengue_Fever_Hematological_Dataset.csv')
+    src = ''.join(c['source']).replace('data/Dengue_Fever_Hematological_Dataset.csv', 'data/Dengue_Fever_Hematological_Dataset.csv')
     if i == 10 and ADULT:
         src += "\ndf = df[df['age'] >= 18].reset_index(drop=True)\n"
     if i == 12:

@@ -5,7 +5,7 @@ plt.show = lambda *a, **k: plt.close('all')
 nb = json.load(open('dengue-detection4.ipynb')); g = {'__name__': '__main__'}
 for i, c in enumerate(nb['cells']):
     if c['cell_type'] != 'code' or i >= 62: continue
-    src = ''.join(c['source']).replace('/kaggle/input/datasets/musabbir22/dengue-detection-dataset4/Dengue Fever Hematological Dataset.csv', 'data/Dengue_Fever_Hematological_Dataset.csv')
+    src = ''.join(c['source']).replace('data/Dengue_Fever_Hematological_Dataset.csv', 'data/Dengue_Fever_Hematological_Dataset.csv')
     src = '\n'.join(l for l in src.split('\n') if not l.strip().startswith(('!', '%')))
     with contextlib.redirect_stdout(io.StringIO()):
         exec(compile(src, f'cell{i}', 'exec'), g)

@@ -12,7 +12,7 @@ for i, c in enumerate(nb['cells']):
     if c['cell_type'] != 'code' or i >= 62:
         continue
     src = ''.join(c['source'])
-    src = src.replace('/kaggle/input/datasets/musabbir22/dengue-detection-dataset4/Dengue Fever Hematological Dataset.csv',
+    src = src.replace('data/Dengue_Fever_Hematological_Dataset.csv',
                       'data/Dengue_Fever_Hematological_Dataset.csv')
     lines = [l for l in src.split('\n') if not l.strip().startswith(('!', '%'))]
     src = '\n'.join(lines)
